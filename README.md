@@ -1,66 +1,40 @@
 # 📧 Spam Email Detection using Machine Learning
 
-## 📌 Project Overview
+## 📌 Overview
 
-This project uses Machine Learning to classify emails as **Spam** or **Not Spam**.
-
-The application is built using **Python**, **Flask**, **Scikit-learn**, **HTML**, and **CSS**.
-
----
+This project predicts whether an email is **Spam** or **Genuine** using Machine Learning.
 
 ## 🚀 Features
 
-- Spam Email Detection
-- Machine Learning Prediction
-- Modern User Interface
+- Spam Detection
 - Confidence Score
-- Responsive Design
+- Spam & Genuine Probability
+- AI Reason
+- Modern Flask UI
 
----
-
-## 🛠 Technologies Used
+## 🛠 Technologies
 
 - Python
 - Flask
 - Pandas
 - Scikit-Learn
-- HTML5
-- CSS3
+- HTML
+- CSS
 
----
-
-## 📷 Screenshots
-
-### Home Page
-
-![Home](screenshots/home.png)
-
-### Spam Prediction
-
-![Spam](screenshots/spam.png)
-
-### Not Spam Prediction
-
-![Not Spam](screenshots/notspam.png)
-
----
-
-## ▶️ How to Run
+## ▶️ Run
 
 ```bash
 python app.py
 ```
 
----
-
-## 🤖 Machine Learning Algorithm
+## 🤖 Algorithm
 
 Multinomial Naive Bayes
 
-Accuracy: **96.86%**
+## Accuracy
 
----
+96.86%
 
-## 👩‍💻 Author
+## Author
 
-**Varsha Chakravarthula**
+Varsha Chakravarthula

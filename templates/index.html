@@ -2,111 +2,113 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Spam Email Detection AI</title>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
 </head>
 
 <body>
 
-<div class="background"></div>
+    <div class="background"></div>
 
-<div class="card">
+    <div class="card">
 
-    <h1>📧 Spam Email Detector</h1>
+        <h1>📧 Spam Email Detector</h1>
 
-    <p class="subtitle">
-        AI Powered Email Classification System
-    </p>
+        <p class="subtitle">
+            AI Powered Email Classification System
+        </p>
 
-    <form action="/predict" method="POST">
+        <form action="/predict" method="POST">
 
-        <textarea
-        name="message"
-        placeholder="Paste your email here..."
-        required>{{message}}</textarea>
+            <textarea
+                name="message"
+                placeholder="Paste your email here..."
+                required>{{ message if message else "" }}</textarea>
 
-        <button type="submit">
+            <button type="submit">
+                🚀 Analyze Email
+            </button>
 
-            🚀 Analyze Email
+        </form>
 
-        </button>
+        {% if prediction %}
 
-    </form>
+        <div class="result">
 
-{% if prediction %}
+            <h2 style="color: {{ color }};">
+                {{ prediction }}
+            </h2>
 
-<div class="result">
+            <!-- NEW -->
+            <p style="color:white;
+                      font-size:18px;
+                      margin-top:15px;
+                      margin-bottom:20px;">
+                {{ reason }}
+            </p>
 
-<h2 style="color:{{color}}">
+            <h3>📊 Confidence</h3>
 
-{{prediction}}
+            <div class="progress">
+                <div class="progress-bar"
+                     style="width: {{ confidence }}%;">
+                    {{ confidence }}%
+                </div>
+            </div>
 
-</h2>
+            <br>
 
-<h3>
+            <h3>🚨 Spam Probability</h3>
 
-Confidence
+            <div class="progress">
+                <div class="progress-bar"
+                     style="width: {{ spam_probability }}%; background:#ff4d4d;">
+                    {{ spam_probability }}%
+                </div>
+            </div>
 
-</h3>
+            <br>
 
-<div class="progress">
+            <!-- CHANGED -->
+            <h3>✅ Genuine Email Probability</h3>
 
-<div
-class="progress-bar"
+            <div class="progress">
+                <div class="progress-bar"
+                     style="width: {{ ham_probability }}%; background:#00c853;">
+                    {{ ham_probability }}%
+                </div>
+            </div>
 
-style="width: {{confidence}}%;">
+        </div>
 
-{{confidence}}%
+        {% endif %}
 
-</div>
+        <div class="footer">
 
-</div>
+            <hr>
 
-</div>
+            <p>🤖 Machine Learning Model : Multinomial Naive Bayes</p>
 
-{% endif %}
+            <p>🎯 Accuracy : 96.86%</p>
 
-<div class="footer">
+            <p>
+                👩‍💻 Developed by
+                <strong>Varsha Chakravarthula</strong>
+            </p>
 
-<hr>
+        </div>
 
-<p>
-
-🤖 Machine Learning Model :
-Naive Bayes
-
-</p>
-
-<p>
-
-Accuracy :
-96.86%
-
-</p>
-
-<p>
-
-Developed by
-<strong>Varsha Chakravarthula</strong>
-
-</p>
-
-</div>
-
-</div>
+    </div>
 
 </body>
 
