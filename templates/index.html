@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Spam Email Detection AI</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<div class="card">
+
+    <h1>📧 Spam Email Detector</h1>
+
+    <p class="subtitle">
+        AI Powered Email Classification System
+    </p>
+
+    <form action="/predict" method="POST">
+
+        <textarea
+        name="message"
+        placeholder="Paste your email here..."
+        required>{{message}}</textarea>
+
+        <button type="submit">
+
+            🚀 Analyze Email
+
+        </button>
+
+    </form>
+
+{% if prediction %}
+
+<div class="result">
+
+<h2 style="color:{{color}}">
+
+{{prediction}}
+
+</h2>
+
+<h3>
+
+Confidence
+
+</h3>
+
+<div class="progress">
+
+<div
+class="progress-bar"
+
+style="width: {{confidence}}%;">
+
+{{confidence}}%
+
+</div>
+
+</div>
+
+</div>
+
+{% endif %}
+
+<div class="footer">
+
+<hr>
+
+<p>
+
+🤖 Machine Learning Model :
+Naive Bayes
+
+</p>
+
+<p>
+
+Accuracy :
+96.86%
+
+</p>
+
+<p>
+
+Developed by
+<strong>Varsha Chakravarthula</strong>
+
+</p>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
